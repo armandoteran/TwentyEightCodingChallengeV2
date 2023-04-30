@@ -9,3 +9,11 @@
       - else
         | Log in, please
         = button_to 'Sign in', new_patient_session_path
+      - if @order.nil?
+        h1
+          | Choose a product
+          - @products.each do |product|
+
+              h2= product.name
+      - else
+        | My product: #{@product.name}!
