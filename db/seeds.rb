@@ -10,10 +10,10 @@ puts 'Deleting categories'
 
 Category.destroy_all
 
-birth_control = Category.create(name: "Birth Control")
-emergency_contraception = Category.create(name: "Emergency Contraception")
-testing_kits = Category.create(name: "Testing Kits")
-otc_products = Category.create(name: "OTC Products")
+birth_control = Category.create(name: 'Birth Control')
+emergency_contraception = Category.create(name: 'Emergency Contraception')
+testing_kits = Category.create(name: 'Testing Kits')
+otc_products = Category.create(name: 'OTC Products')
 
 puts 'Categories created!'
 
@@ -21,9 +21,22 @@ puts 'Deleting Products'
 
 Product.destroy_all
 
-Product.create(name: "Product 1", quantity: 1, price: 90, instructions: "Take one before dinner", category: birth_control)
-Product.create(name: "Product 2", quantity: 1, price: 19, instructions: "Take one before dinner", category: emergency_contraception)
-Product.create(name: "Product 3", quantity: 1, price: 45, instructions: "Take one before dinner", category: testing_kits)
-Product.create(name: "Product 4", quantity: 1, price: 29, instructions: "Take one before dinner", category: otc_products)
+Product.create(name: 'Product 1', quantity: 1, price: 90, instructions: 'Take one before dinner', category: birth_control)
+Product.create(name: 'Product 2', quantity: 1, price: 19, instructions: 'Take one before dinner', category: emergency_contraception)
+Product.create(name: 'Product 3', quantity: 1, price: 45, instructions: 'Take one before dinner', category: testing_kits)
+Product.create(name: 'Product 4', quantity: 1, price: 29, instructions: 'Take one before dinner', category: otc_products)
 
 puts 'Products created!'
+
+State.destroy_all
+
+STATES.each do |position|
+  puts 'Creating states ...'
+  State.create(
+    full_name: position[0],
+    abbreviation: position[1],
+    service_offered: position[2],
+    minimum_age: position[3]
+  )
+end
+puts 'States created!'

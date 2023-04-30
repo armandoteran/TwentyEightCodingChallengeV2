@@ -8,5 +8,5 @@ class Patient < ApplicationRecord
   validates :state, presence: true
 
   has_one :order, dependent: :destroy
-  has_many :products, through: :orders
+  has_many :products, through: :orders, dependent: :destroy
 end
