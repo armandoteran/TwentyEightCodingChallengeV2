@@ -9,4 +9,8 @@ class Patient < ApplicationRecord
 
   has_one :order, dependent: :destroy
   has_many :products, through: :orders, dependent: :destroy
+
+  def service_offered?
+    State.find_by(full_name:"#{self.state}").service_offered
+  end
 end
