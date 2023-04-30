@@ -2,3 +2,10 @@
   .col-12.text-center
     h1
       | Welcome to the 28H Coding Challenge!
+      - if patient_signed_in?
+        | Hi #{current_patient.full_name}!
+        = link_to 'Edit profile', edit_patient_registration_path
+        = button_to 'Sign out', destroy_patient_session_path, method: :delete
+      - else
+        | Log in, please
+        = button_to 'Sign in', new_patient_session_path
