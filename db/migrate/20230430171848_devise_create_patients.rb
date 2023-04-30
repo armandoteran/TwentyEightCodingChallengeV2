@@ -7,6 +7,11 @@ class DeviseCreatePatients < ActiveRecord::Migration[6.1]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      ## Additional fields
+      t.string :full_name, null: false
+      t.date :date_of_birth, null: false
+      t.string :state, null: false
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
