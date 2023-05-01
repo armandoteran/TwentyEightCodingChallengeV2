@@ -40,16 +40,3 @@ STATES.each do |position|
   )
 end
 puts 'States created!'
-
-puts 'Deleting Patients ...'
-Patient.destroy_all
-5.times do
-  Patient.create(
-    full_name: "#{Faker::Name.female_first_name} #{Faker::Name.last_name}",
-    email: Faker::Internet.email,
-    date_of_birth: Faker::Date.between(from: '1990-01-01', to: '2010-01-01'),
-    password: '123456',
-    state: "#Faker::Address.state}"
-  )
-end
-puts 'Patients created!'
