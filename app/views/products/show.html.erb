@@ -11,4 +11,6 @@
 <% else %>
   <p>Sorry. You are not old enough to buy this product.</p>
 <% end %>
-<%= link_to "Buy", new_product_order_path(@product) %>
+<% if  current_patient.old_enough? && current_patient.service_offered?%>
+  <%= link_to "Buy", new_product_order_path(@product) %>
+<% end %>
