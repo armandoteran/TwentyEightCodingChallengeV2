@@ -6,3 +6,8 @@
 <% else %>
   <p>Sorry. This product is not sold in your state.</p>
 <% end %>
+<% if  current_patient.old_enough?%>
+  <p>You are old enough to buy this product.</p>
+<% else %>
+  <p>Sorry. You are not old enough to buy this product.</p>
+<% end %>
